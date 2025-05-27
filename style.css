@@ -1,0 +1,258 @@
+body {
+  margin: 17px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #9b4808;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  background-color: #f5ddc4;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+  background-color: #f9e6d4;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+input, button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.card {
+  background-color: #eacaa2;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+  .checkout-container {
+    background-color: #f5ddc4;
+    border-radius: 15px;
+    width: 600px;
+  }
+
+  h1 {
+    text-align: center;
+    background-color: #f9e6d4;
+    color: #77462e;
+    font-size: 2rem;
+    border-radius: 15px;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section {
+    background-color: #d6a569;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title {
+    background-color: #f5ddc4;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #855b4a;
+    font-size: 1.2rem;
+  }
+
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .item-card {
+    background-color: #fce9ca;
+    padding: 0.8rem 1rem;
+    border-radius: 15px;
+    min-width: 120px;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .box {
+    background-color: #fce9ca;
+    border-radius: 20px;
+    padding: 1rem;
+    min-height: 80px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  input, button {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    background-color: #eacaa2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #kembalian-text {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #4e3826;
+  }
+
+  /* style.css (sama persis dengan sebelumnya) */
+body {
+    font-family: sans-serif;
+    background-color: #6a4c32; /* Warna latar belakang cokelat tua */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Memastikan tinggi minimum viewport */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar/tinggi elemen */
+}
+
+.container {
+    background-color: #a38c71; /* Warna latar belakang kontainer */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px; /* Batasi lebar agar tidak terlalu lebar di layar besar */
+    text-align: center;
+}
+
+h1 {
+    color: #ffe6bd; /* Warna teks judul */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.stock-panel {
+    background-color: #cdb99b; /* Warna panel tempat item stok */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffe6bd; /* Warna latar belakang setiap item stok */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stock-item:last-child {
+    margin-bottom: 0; /* Hapus margin bawah untuk item terakhir */
+}
+
+.item-name {
+    font-size: 1.1em;
+    color: #6a4c32;
+    font-weight: bold;
+    flex-grow: 1; /* Agar nama item mengambil ruang yang tersedia */
+    text-align: left;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antar elemen di controls */
+}
+
+.btn-minus, .btn-plus {
+    background-color: #a38c71; /* Warna tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-minus:hover, .btn-plus:hover {
+    background-color: #8c765f; /* Warna tombol saat di-hover */
+}
+
+.stock-value {
+    background-color: #6a4c32; /* Warna latar belakang nilai stok */
+    color: #ffe6bd;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    min-width: 30px; /* Lebar minimum untuk nilai stok */
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsif dasar */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .stock-item {
+        flex-direction: column; /* Ubah tata letak menjadi kolom di layar kecil */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .controls {
+        width: 100%; /* Agar kontrol mengambil lebar penuh */
+        justify-content: space-between; /* Rata kiri kanan untuk kontrol */
+    }
+
+    .stock-value {
+        flex-grow: 1; /* Agar nilai stok bisa melebar */
+    }
+}

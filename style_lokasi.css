@@ -1,0 +1,122 @@
+body {
+    font-family: sans-serif;
+    background-color: #6a4c32; /* Warna latar belakang cokelat tua */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container-lokasi {
+    background-color: #a38c71; /* Warna latar belakang kontainer */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 900px; /* Lebar maksimum untuk menampung 3 card */
+    text-align: center;
+}
+
+h1 {
+    color: #ffe6bd; /* Warna teks judul */
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Ukuran judul lebih besar */
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Pastikan judul di tengah */
+}
+
+.cabang-list {
+    display: flex;
+    flex-wrap: wrap; /* Agar card bisa turun ke baris baru jika tidak muat */
+    justify-content: center; /* Rata tengah card */
+    gap: 25px; /* Jarak antar card */
+    padding: 15px 0;
+}
+
+.cabang-card {
+    background-color: #cdb99b; /* Warna latar belakang setiap card */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Penting agar gambar tidak keluar dari border-radius */
+    width: 280px; /* Lebar tetap untuk setiap card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px; /* Padding di bagian bawah card */
+    transition: transform 0.2s ease-in-out;
+}
+
+.cabang-card:hover {
+    transform: translateY(-5px); /* Efek melayang saat di-hover */
+}
+
+.cabang-image-placeholder {
+    width: 100%;
+    height: 350px; /* Tinggi tetap untuk gambar */
+    background-color: #e0d0b7; /* Warna latar belakang  jika gambar belum dimuat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cabang-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+    display: block;
+}
+
+.cabang-address {
+    font-size: 1.1em;
+    color: #6a4c32;
+    font-weight: bold;
+    margin: 0 15px 15px; /* Ma  rgin atas, kanan/kiri, bawah */
+    text-align: center;
+    line-height: 1.4;
+}
+
+.map-link {
+    display: inline-block; /* Agar bisa menerapkan padding dan margin */
+    padding: 10px 15px;
+    background-color: #a38c71; /* Warna latar belakang link pin */
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.map-link:hover {
+    background-color: #8c765f;
+}
+
+.map-pin-icon {
+    width: 35px; /* Ukuran icon pin */
+    height: 35px;
+    display: block; /* Agar tidak ada ruang ekstra di bawah gambar */
+}
+
+/* Responsif */
+@media (max-width: 950px) {
+    .cabang-list {
+        flex-direction: column; /* Ubah ke kolom tunggal di layar kecil */
+        align-items: center;
+    }
+
+    .cabang-card {
+        width: 80%; /* Lebar card akan 80% dari container */
+        max-width: 350px; /* Tapi jangan terlalu lebar */
+    }
+}
+
+@media (max-width: 600px) {
+    .container-lokasi {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}

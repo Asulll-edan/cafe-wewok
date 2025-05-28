@@ -42,7 +42,7 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* Penting agar gambar tidak keluar dari border-radius */
-    width: 280px; /* Lebar tetap untuk setiap card */
+    width: 350px; /* Lebar 50tetap untuk setiap card */
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -3,6 +3,10 @@ session_start();
 
 if(!isset($_SESSION['akun'])){
     header('location:login.php');
+
+    if($_SESSION['kategori'] !== 'user'){
+        header('location:adminpage.php');
+    }
 }
 
 

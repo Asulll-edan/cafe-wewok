@@ -1,6 +1,10 @@
 <?php
 session_start();
 include "phpmyadmin/koneksi.php";
+
+      if($_SESSION['kategori'] !== 'admin'){
+        header('location:dekstop.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +34,7 @@ include "phpmyadmin/koneksi.php";
             <p>username</p>
             <p>email</p>
             <p>password</p>
+            <p>keterangan</p>
 
         </div>
 
@@ -51,6 +56,7 @@ include "phpmyadmin/koneksi.php";
              <p><?php echo $data['username'];?></p>
              <p><?php echo $data['email'];?></p>
              <p><?php echo $data['password'];?></p>
+             <p><a href="adminpage"><button>klik</button></a></p>
             
  
              <?php }?>

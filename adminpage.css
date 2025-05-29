@@ -22,6 +22,7 @@ body{
   background-color:#fff4f1 ;
 }
 .navbar-tabel p{
+  margin-inline: -70px;
   font-family: 'atkinson hyperglebile',sans-serif;
   font-size: 20px;
   color: #542114;
@@ -60,12 +61,14 @@ body{
   flex-wrap: wrap;
   gap: 5px;
   justify-content: center;
+  margin-inline: 25px;
   padding: 10px;
-    }
-    
-    .list-nama p{
-      flex: 0 0 calc(33.333% - 10px); 
-      font-family: "Hanken Grotesk",sans-serif;
+}
+
+.list-nama p{
+  flex: 0 0 calc(33.333% - 10px); 
+  font-family: "Hanken Grotesk",sans-serif;
+  margin-inline: -70px;
       font-size: 14px;
       font-weight: bolder;
       padding: 10px;

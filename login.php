@@ -29,9 +29,19 @@ if(isset($_POST['username'])){
   if(mysqli_num_rows($query) > 0){
     $data= mysqli_fetch_array($query);
     $_SESSION['akun']=$data;
+    $_SESSION['kategori']=$data['kategori'];
 
-    echo'<script class="alert alert-warning" role="alert">alert("selamat anda berhasil login");
-    location.href="dekstop.php";</script>';
+    if($data['kategori']=='admin'){
+
+      echo'<script class="alert alert-warning" role="alert">alert("selamat anda berhasil login");
+      location.href="adminpage.php";</script>';
+    } else if ($data['kategori']=='user'){
+
+    }
+      echo'<script class="alert alert-warning" role="alert">alert("selamat anda berhasil login");
+      location.href="dekstop.php";</script>';
+    
+    
   }else{
     echo'<script>alert("salah pw/username")</script>';
   }

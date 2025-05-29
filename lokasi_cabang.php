@@ -1,22 +1,23 @@
 <?php
-// lokasi_cabang.php
+session_start();
+include "phpmyadmin/koneksi.php";
 
-// Sertakan file koneksi database
-include 'koneksi.php'; // Asumsi file koneksi.php ada di direktori yang sama
+$cabang_locations = []; // ini baris 5
 
-// Ambil data lokasi cabang dari database
-$sql = "SELECT id, nama_cabang, alamat, latitude, longitude, gambar_url FROM lokasi_cabang ORDER BY nama_cabang ASC";
-$result = $conn->query($sql);
+if ($db) { // ini baris 6
+    $sql = "SELECT id, nama_cabang, alamat, latitude, longitude, gambar_url FROM lokasi_cabang ORDER BY nama_cabang ASC";
+    $result = $db->query($sql);
 
-$cabang_locations = [];
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $cabang_locations[] = $row;
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $cabang_locations[] = $row;
+        }
     }
+} else {
+    echo "Koneksi database gagal.";
 }
-// Tutup koneksi database sete lah semua  data diambil
-$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
@@ -24,7 +25,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokasi Cabang</title>
-    <link rel="stylesheet" href="style_lokasi.css"> </head>
+    <link rel="stylesheet" href="style_lokasi.css">
+</head>
 <body>
     <div class="container-lokasi">
         <h1>LOKASI CABANG</h1>
@@ -41,7 +43,8 @@ $conn->close();
                         </div>
                         <p class="cabang-address"><?php echo htmlspecialchars($cabang['alamat']); ?></p>
                         <a href="https://www.google.com/maps/search/?api=1&query=<?php echo urlencode($cabang['latitude'] . ',' . $cabang['longitude']); ?>" target="_blank" class="map-link">
-                            <img src="images/map-pin.png" alt="Pin Lokasi" class="map-pin-icon"> </a>
+                            <img src="image/map-pin.png" alt="Pin Lokasi" class="map-pin-icon">
+                        </a>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

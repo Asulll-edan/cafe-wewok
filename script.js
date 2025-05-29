@@ -1,62 +1,59 @@
-// script.js
-
-// Fungsi untuk menampilkan SweetAlert
 function tampilkanAlert(title, text, icon) {
-    Swal.fire({
-        title: title,
-        text: text,
-        icon: icon,
-        confirmButtonText: 'Oke'
-    });
+    Swal.fire({ title, text, icon, confirmButtonText: 'Oke' });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Tangani event click pada tombol plus atau minus
-    document.querySelectorAll('.btn-plus, .btn-minus').forEach(button => {
-        button.addEventListener('click', async () => { // Gunakan async/await untuk fetch
-            const stockItemDiv = button.closest('.stock-item');
-            const itemId = stockItemDiv.dataset.id; // Ambil ID item dari data-id
-            const stockValueElement = stockItemDiv.querySelector('.stock-value');
-            let currentStock = parseInt(stockValueElement.textContent);
-            const action = button.dataset.action; // plus atau minus
+    let perubahanStok = {};
 
-            let newStock;
-            if (action === 'plus') {
-                newStock = currentStock + 1;
-            } else if (action === 'minus') {
-                if (currentStock <= 0) {
+    document.querySelectorAll('.btn-plus, .btn-minus').forEach(button => {
+        button.addEventListener('click', () => {
+            const itemDiv = button.closest('.stock-item');
+            const itemId = itemDiv.dataset.id;
+            const stockElem = itemDiv.querySelector('.stock-value');
+            let stok = parseInt(stockElem.textContent);
+            const aksi = button.dataset.action;
+
+            if (aksi === 'plus') stok++;
+            else if (aksi === 'minus') {
+                if (stok <= 0) {
                     tampilkanAlert('Stok Habis!', 'Stok tidak bisa kurang dari 0.', 'warning');
-                    return; // Hentikan fungsi jika stok sudah 0
+                    return;
                 }
-                newStock = currentStock - 1;
+                stok--;
             }
 
-            // Kirim permintaan update ke PHP backend
-            try {
+            stockElem.textContent = stok;
+            perubahanStok[itemId] = stok;
+        });
+    });
+
+    document.getElementById('btn-save').addEventListener('click', async () => {
+        const semuaPerubahan = Object.entries(perubahanStok);
+        if (semuaPerubahan.length === 0) {
+            tampilkanAlert('Tidak ada perubahan.', 'Silakan ubah stok sebelum menyimpan.', 'info');
+            return;
+        }
+
+        try {
+            for (const [id, stokBaru] of semuaPerubahan) {
                 const response = await fetch('update_stok.php', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        id: itemId,
-                        newStock: newStock
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id, newStock: stokBaru })
                 });
 
                 const data = await response.json();
-
-                if (data.success) {
-                     // Update tampilan stok di halaman jika berhasil
-                    stockValueElement.textContent = newStock;
-                    tampilkanAlert('Berhasil!', 'Data stok telah diperbarui.', 'success');
-                } else {
-                    tampilkanAlert('Gagal!', data.message || 'Terjadi kesalahan saat memperbarui stok.', 'error');
+                if (!data.success) {
+                    console.log('Server response:', data);
+                    tampilkanAlert('Gagal!', data.message || `Gagal menyimpan stok untuk ID ${id}.`, 'error');
+                    return;
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                 tampilkanAlert('Error Jaringan!', 'Tidak dapat terh ubung ke server.', 'error');
-             }
-        });
+            }
+
+            tampilkanAlert('Berhasil!', 'Semua data stok berhasil diperbarui.', 'success');
+            perubahanStok = {};
+        } catch (error) {
+            tampilkanAlert('Error Jaringan!', 'Tidak bisa terhubung ke server.', 'error');
+        }
     });
-});                 
+});

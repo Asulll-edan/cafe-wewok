@@ -1,5 +1,6 @@
 <?php// Sertakan file koneksi database
-include 'koneksi.php';
+session_start();
+include 'phpmyadmin/koneksi.php';
 
 // A mbil data stok dari database
 $sql = "SELECT id, nama_item, jumlah_stok FROM stok_barang";

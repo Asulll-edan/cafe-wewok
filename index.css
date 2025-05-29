@@ -39,6 +39,15 @@ body{
         height: 180px;
         width: 180px;
     }
+    .logo-tulisan img{
+        
+        animation: mantap 3s linear infinite;
+}
+    @keyframes mantap{
+        100%{
+            transform: rotate(360deg);
+        }
+    }
     .module{
         padding: 25px;
         

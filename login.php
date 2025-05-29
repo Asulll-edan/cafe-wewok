@@ -41,28 +41,31 @@ if(isset($_POST['username'])){
 <div class="login-form">
   <form method="post">
     <div class="input-login">
-      <img src="image/loginlogo.png" >
+      <a href="index.php">
+        <img src="image/loginlogo.png" >
+      </a>
       <div class="title">
-            <h1>Log in</h1>
+            <h1>LOG IN</h1>
         </div>
 <div class="ketikan">
- <i class="fa-solid fa-circle-user" style="color: #ffffff;" width=100px; height="120px;"></i>
-      <input type="text" name="username" placeholder="| Username"> 
+ <i class="fa-solid fa-circle-user" style="color: #ffffff;" ></i>
+      <input type="text" name="username" placeholder="Username"> 
       <br>
       <br>
       <i class="fa-solid fa-key" style="color: #ffffff;" ></i>
-   <input type="password" name="password" placeholder="| password">
+   <input type="password" name="password" placeholder="password">
    <br>
    <br>
   </div>
    <div class="submit-tombol">
-     <input type="submit" name="button" value="Login" >
+     <input type="submit" name="button" value="LOGIN" >
      
     </div>
 </div>
   </form>
   <div class="bacaan-bawah">
-    <p>Tidak memiliki akun?<a href="regis.php">Daftar</a></p>
+    <p>lupa kata sandi?</p>
+<p>Tidak memiliki akun?<a href="regis.php">Buat akun baru</a></p>
   </div>
 </div>
 </body>

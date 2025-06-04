@@ -4,6 +4,8 @@ html{
 body{
     background-image: url(image/bg_index.jpeg);
     background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
     
@@ -12,6 +14,7 @@ body{
         font-family: 'Peace Sans', sans-serif;
         color: #fff4f1;
         padding: 27.4px;
+        width: 100%;
     }
     .dekstop-icon{
         margin-top: 8.7%;
@@ -65,7 +68,7 @@ body{
         transition: 0.27s ease-in-out;
         /* animation: shadow 5s linear infinite; */
     }
-
+    
     .module a {
         padding: 12px;
         font-family: 'Hanken Grotesk', sans-serif ;
@@ -77,11 +80,36 @@ body{
         display: block;
         margin-inline: 45%;
     }
-    /* @keyframes shadow{
-        100%{
-
-            width: 20px;
-            height: 20px;
+    @media screen and (max-width:520px) {
+        .judul h1{
+            background-color:rgba(233, 198, 170, 0.8) ;      
         }
-    } */
+        
+        body{
+            height: 100vh;
+        }
+        .dekstop-icon{
+            margin-top: 25%;
+        }
+        .logo-tulisan p{
+            font-size: 17px;
+            margin-right:40px;
+            margin-left: 40px;
+        }
+        .module a:hover{
+            
+            background-color: #fff4f1;
+            color: #4e2116;
+            transition: 0.27s ease-in-out;
+        }
+        .module a{
+            margin-inline: 35%;
+
+        }
+    }
     
+    @media screen and (max-width: 1230) {
+        .judul h1{
+            background-color: aqua;
+        }
+    }

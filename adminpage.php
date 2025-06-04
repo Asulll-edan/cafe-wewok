@@ -56,7 +56,8 @@ include "phpmyadmin/koneksi.php";
              <p><?php echo $data['username'];?></p>
              <p><?php echo $data['email'];?></p>
              <p><?php echo $data['password'];?></p>
-             <p><a href="adminpage"><button>klik</button></a></p>
+             <p><a href="edit_user.php?Id_akun=<?= $data['Id_akun'] ?>"><button>Edit</button></a> / <a href="hapus_user.php?Id_akun=<?= $data['Id_akun'] ?>"><button>hapus</button></a></p>
+             
             
  
              <?php }?>

@@ -29,7 +29,7 @@ if(isset($_POST['username'])){
 
   if($query){
     echo "<script>alert('pendaftaran berhasil')</script>";
-} else{
+   } else{
     echo "<script>alert('pendaftaran gagal')</script>";
     
   }

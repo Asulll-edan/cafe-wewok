@@ -37,7 +37,7 @@ body{
   margin: 10px;
   margin-inline: 18px;
 }
-.search-tabel input{
+.search-tabel input {
   color:#542114 ;
   font-size: 20px;
   font-family: 'atkinson hyperglebile',sans-serif;
@@ -51,6 +51,18 @@ body{
 .search-tabel input::placeholder{
   
   color:#542114 ;
+}
+
+.logot{
+   color:#542114 ;
+  font-size: 20px;
+  font-family: 'atkinson hyperglebile',sans-serif;
+  background-color:#fff4f1 ;
+  border-radius:20px;
+  border: none;
+  margin-top: 10px;
+  padding: 8px;
+  text-decoration: none;
 }
 
 .tombol{

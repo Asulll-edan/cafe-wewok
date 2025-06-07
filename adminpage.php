@@ -28,6 +28,7 @@ include "phpmyadmin/koneksi.php";
             <form method="get">
                 <input type="text" name="search" placeholder="search...">
                 <input type="submit" value="search">
+                <a class="logot" href="logout.php">logout</a>
             </form>
         </div>
         <div class="navbar-tabel">

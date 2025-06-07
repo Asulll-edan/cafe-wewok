@@ -39,7 +39,7 @@ if(isset($_POST['username'])){
 
     }
       echo'<script class="alert alert-warning" role="alert">alert("selamat anda berhasil login");
-      location.href="dekstop.php";</script>';
+      location.href="dekstop/menu.php";</script>';
     
     
   }else{

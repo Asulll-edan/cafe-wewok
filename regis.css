@@ -1,10 +1,12 @@
-*{
+/* *{
     margin: 0;
     padding: 0px;
 }
 body{
     background-image: url(image/bg_index.jpeg);
     background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 .title{
@@ -58,7 +60,7 @@ body{
     
     .ketikan-input i{
         position: absolute;
-        /* left: 39%; */
+        
     }
     
     i{
@@ -98,4 +100,137 @@ body{
         font-weight: 100;
     }
 
-    
+    @media screen and (max-width:748px) and (min-width:420px) {
+        body{
+            height: 100vh;
+        }
+    } */
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(image/bg_index.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #fff4f1;
+    margin-bottom: 10px;
+}
+
+.login-form {
+    width: 27%;
+    min-width: 300px;
+    background-color: rgba(233, 198, 170, 0.8);
+    text-align: center;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.login-form img {
+    height: 130px;
+    width: 130px;
+    margin-top: 4%;
+}
+
+.login-form p {
+    padding: 10px;
+}
+
+.ketikan input {
+    width: 90%;
+    max-width: 270px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: #4e2116;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    color: #fff4f1;
+    font-family: 'solway', sans-serif;
+    margin-bottom: 15px;
+}
+
+.ketikan input::placeholder {
+    color: #fff4f1;
+    font-family: 'solway', sans-serif;
+    font-size: 16px;
+}
+
+.ketikan-input i {
+    position: absolute;
+}
+
+i {
+    padding: 10px;
+    border-radius: 90%;
+    background-color: #4e2116;
+}
+
+.bacaan-bawah {
+    font-family: 'open sans', sans-serif;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.bacaan-bawah a {
+    color: #fff4f1;
+    text-decoration: none;
+}
+
+.submit-tombol input {
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #966b61;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    padding: 10px;
+    color: #fff4f1;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 748px) and (min-width: 414px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .ketikan input {
+        width: 100%;
+    }
+
+    .submit-tombol input {
+        width: 70%;
+    }
+
+    .login-form img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .bacaan-bawah {
+        padding: 15px 10px;
+    }
+}

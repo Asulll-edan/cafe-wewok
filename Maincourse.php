@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="Combo.css">
 </head>
 <body>
+   <div class="back-button-container">
+    <a href="dekstop/menu.php" class="back-button">← Kembali ke Menu Utama</a>
+  </div>
   <div class="menu-container">
     <div class="menu-header">MAIN COURSE</div>
     <div class="MC-grid">

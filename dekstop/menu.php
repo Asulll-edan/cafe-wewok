@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['akun'])){
+    header('location:login.php');
+
+    if($_SESSION['kategori'] !== 'user'){
+        header('location:adminpage.php');
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +36,7 @@
     <li><a href="#">checkout</a></li>
     <li><a href="#">Riwayat pemesanan</a></li>
     <li><a href="../lokasi_cabang.php">Lokasi Cabang</a></li>
+    <li><a href="../logout.php">Logout</a></li>
   </ul>
 </div>
 
@@ -36,9 +50,10 @@
       <div class="best-items">
         <?php
         $bestItems = [
-          ['img' => 'img/dessert1.jpg', 'name' => 'bebas'], 
-          ['img' => 'img/main1.jpg', 'name' => 'bebas'],
-          ['img' => 'img/drink1.jpg', 'name' => 'bebas']
+          
+          ['img' => '../image/cheesecake.jpg', 'name' => 'cheesecake'],
+          ['img' => '../image/colorful.jpg', 'name' => 'colorful ice cream'],
+          ['img' => '../image/mangosticky.jpg', 'name' => 'manggo sticky rice']
         ];
 
         foreach ($bestItems as $item) {
@@ -52,17 +67,12 @@
     </div>
 
     <div class="categories">
-      <a href="dessert.php" class="category">
-        <div class="icon"><img src="dessert.png" alt="Dessert Icon"></div>
-        <p>Dessert</p>
-      </a>
       <div class="category">
-        <div class="icon"><img src="main course.png" alt="Main Course Icon"></div>
-        <p>Main Course</p>
-      </div>
-      <div class="category">
-        <div class="icon"><img src="drink.png" alt="Drink Icon"></div>
-        <p>Drinks</p>
+        <a href="../Maincourse.php">
+          <div class="icon"><img src="main course.png" alt="Main Course Icon"></div>
+          <p>Main Course</p>
+        </a>
+
       </div>
     </div>
   </div>

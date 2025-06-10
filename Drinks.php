@@ -7,6 +7,28 @@
   <link rel="stylesheet" href="Combo.css">
 </head>
 <body>
+   <!-- Tombol garistiga -->
+<button id="garistiga-btn" class="navbar-toggle" onclick="openSidebar()">
+  ☰
+</button>
+
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+  <!-- Tombol close di dalam sidebar -->
+  <button id="close-btn" class="close-btn" onclick="closeSidebar()">×</button>
+  
+  <ul>
+    <li><a href="dekstop/menu.php">Beranda</a></li>
+    <li><a href="../Maincourse.php">Menu</a></li>
+    <li><a href="#">checkout</a></li>
+    <li><a href="#">Riwayat pemesanan</a></li>
+    <li><a href="../lokasi_cabang.php">Lokasi Cabang</a></li>
+  </ul>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
   <div class="menu-container">
     <div class="menu-header">DRINKS</div>
     <div class="MC-grid">
@@ -96,4 +118,17 @@
     </div>
   </div>
 </body>
+<script>
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('active');
+  document.getElementById('overlay').classList.add('active');
+  document.getElementById('garistiga-btn').style.display = 'none';
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('active');
+  document.getElementById('overlay').classList.remove('active');
+  document.getElementById('garistiga-btn').style.display = 'block';
+}
+</script>
 </html>

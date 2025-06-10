@@ -29,6 +29,11 @@ h1 {
     text-align: center; /* Pastikan judul di tengah */
 }
 
+a{
+    
+    text-decoration: none;
+}
+
 .cabang-list {
     display: flex;
     flex-wrap: wrap; /* Agar card bisa turun ke baris baru jika tidak muat */

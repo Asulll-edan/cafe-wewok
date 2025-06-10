@@ -19,6 +19,7 @@ if ($db) { // ini baris 6
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -28,8 +29,9 @@ if ($db) { // ini baris 6
     <link rel="stylesheet" href="style_lokasi.css">
 </head>
 <body>
+    
     <div class="container-lokasi">
-        <h1>LOKASI CABANG</h1>
+        <a href="dekstop/menu.php"><h1>LOKASI CABANG</h1></a>
         <div class="cabang-list">
             <?php if (count($cabang_locations) > 0): ?>
                 <?php foreach ($cabang_locations as $cabang): ?>

@@ -29,6 +29,7 @@ include "phpmyadmin/koneksi.php";
                 <input type="text" name="search" placeholder="search...">
                 <input type="submit" value="search">
                 <a class="logot" href="logout.php">logout</a>
+                <a class="logot" href="stok_barang.php">update stok</a>
             </form>
         </div>
         <div class="navbar-tabel">

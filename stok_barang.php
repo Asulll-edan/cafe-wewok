@@ -30,7 +30,10 @@ $kolom3 = array_slice($items, 18);
 </head>
 <body>
     <div class="container">
-        <h1>STOK BARANG</h1>
+        <a href="adminpage.php">
+
+<h1>STOK BARANG</h1>
+        </a>
         <div class="stock-panel three-columns">
             <div class="column">
                 <?php foreach ($kolom1 as $item): ?>

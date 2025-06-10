@@ -33,8 +33,7 @@ if(!isset($_SESSION['akun'])){
   <ul>
     <li><a href="menu.php">Beranda</a></li>
     <li><a href="../Maincourse.php">Menu</a></li>
-    <li><a href="#">checkout</a></li>
-    <li><a href="#">Riwayat pemesanan</a></li>
+    <li><a href="../riwayat.php">Riwayat pemesanan</a></li>
     <li><a href="../lokasi_cabang.php">Lokasi Cabang</a></li>
     <li><a href="../logout.php">Logout</a></li>
   </ul>

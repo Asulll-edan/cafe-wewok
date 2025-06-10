@@ -44,12 +44,21 @@ body{
     }
     .logo-tulisan img{
         
-        animation: mantap 3s linear infinite;
+        animation: mantap 3s infinite ease-out;
 }
     @keyframes mantap{
-        100%{
-            transform: rotate(360deg);
+        /* 25%{
+            transform: rotateY(360deg);
+        } */
+        50%{
+            transform: rotate(45deg);
+         }
+
+        80%{
+            transform: rotate(-45deg);
         }
+
+       
     }
     .module{
         padding: 25px;

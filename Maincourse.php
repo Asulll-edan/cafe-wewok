@@ -30,8 +30,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   <ul>
     <li><a href="dekstop/menu.php">Beranda</a></li>
     <li><a href="../Maincourse.php">Menu</a></li>
-    <li><a href="#">checkout</a></li>
-    <li><a href="#">Riwayat pemesanan</a></li>
+    <li><a href="riwayat.php">Riwayat pemesanan</a></li>
     <li><a href="../lokasi_cabang.php">Lokasi Cabang</a></li>
   </ul>
 </div>
@@ -40,22 +39,26 @@ while ($row = mysqli_fetch_assoc($result)) {
 <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
   
   <div class="menu-container">
-    <div class="menu-header">MAIN COURSE</div>
-  
-     <div class="MC-grid">
-  <?php
-  foreach ($maincourse as $item) {
-    echo '<div class="MC-item">';
-    echo '<img src="image/' . $item['foto'] . '">';
-    echo '<div class="MC-name">' . $item['nama_item'] . '</div>';
-    echo '<div class="MC-stok">Stok: ' . $item['jumlah_stok'] . '</div><br>';
-    echo '<div class="MC-stok">Rp: ' . $item['price'] . '</div>';
-    echo '<input type="submit" name="tombol" value="Belanja" class="fancy-cart-button">';
-    echo '</div>';
-  }
-  ?>
-</div>
+  <div class="menu-header">MAIN COURSE</div>
+  <div class="MC-grid">
+  <?php foreach ($maincourse as $item): ?>
+    <div class="MC-item">
+      <img src="image/<?php echo $item['foto']; ?>">
+      <div class="MC-name"><?php echo $item['nama_item']; ?></div>
+      <div class="MC-stok">Stok: <?php echo $item['jumlah_stok']; ?></div><br>
+      <div class="MC-stok">Rp: <?php echo number_format($item['price'], 0, ',', '.'); ?></div>
+      
+      <form action="checkout.php" method="post">
+        <input type="hidden" name="item_id" value="<?php echo $item['id']; ?>">
+        <input type="hidden" name="item_name" value="<?php echo htmlspecialchars($item['nama_item']); ?>">
+        <input type="hidden" name="price" value="<?php echo $item['price']; ?>">
+        Jumlah: <input type="number" name="quantity" value="1" min="1" max="<?php echo $item['jumlah_stok']; ?>" required>
+        <input type="submit" name="checkout" value="Belanja" class="fancy-cart-button">
+      </form>
+    </div>
+  <?php endforeach; ?>
   </div>
+</div>
 </body>
 <script>
 function openSidebar() {

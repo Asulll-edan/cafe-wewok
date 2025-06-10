@@ -39,7 +39,9 @@ $data=mysqli_fetch_array($query);
     <br>
         <div class="tombol">
       <input type="submit" name="submit" value='simpan'>
-      <input type="submit" name="cancel" value='cancel'>
+      <a href="edit_user.php">
+<input type="submit" name="cancel" value='cancel'>
+      </a>
     </div>
 </form>
 </body>
@@ -56,7 +58,4 @@ $data=mysqli_fetch_array($query);
   header('location:adminpage.php');
             }
 
-            if(isset($_POST['cancel'])){
-                header('location:edit_user.php');
-            }
 ?>
